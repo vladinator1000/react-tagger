@@ -5,4 +5,6 @@ To use it you need to "npm -g webpack webpack-dev-server" if you don't have webp
 After it's installed, cd to the project directory and "webpack-dev-server"
 it should be live on localhost:8080.
 
+The other dependencies are Lodash, classNames and that's probably it.
+
 
