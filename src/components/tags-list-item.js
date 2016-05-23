@@ -1,27 +1,27 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import classNames from 'classnames';
 
-export default class TagsListItem extends React.Component {
-	constructor(props){
-		super(props);
-	}
+const TagListItem = (props) => {
 
-    
+  const { tag, deleteTag } = props;
+  const iconClass = classNames('fa', 'fa-times');
 
-	render() {
-		const { tag } = this.props;
-		const iconClass = classNames('fa','fa-times');
-
-		return (
-			<span ref = "tagItem">
+  return (
+      <span>
 				<span>{tag}</span>
-				<button onClick = {this.props.deleteTag.bind(this, this.props.tag)}>
-					<i className = {iconClass} ></i>
-				</button>		
+				<button onClick={() => deleteTag(tag)}>
+					<i className={iconClass}/>
+				</button>
 			</span>
-		);
-	}
-}
+  );
+};
+
+TagListItem.propTypes = {
+  tag: PropTypes.string.isRequired,
+  deleteTag: PropTypes.func.isRequired
+};
+
+export default TagListItem;
 
 // insert this in the delete onClick =
 // {this.props.deleteTask.bind(this, this.props.tag)}
