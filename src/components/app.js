@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import React from 'react';
 import TagsList from './tags-list';
 
@@ -54,7 +53,8 @@ export default class App extends React.Component {
 			// Clear the tag variable and input field
 			tag = '';
 			this.refs.tagsInput.value = '';
-		 };
+		 }
+
 		// if the backspace key is pressed, the input isn't empty and the tags array has something in it
 		 if(event.keyCode === 8 && tag === '' && tags.length > 0) {
 		 	//Get the last tag and hand it to deleteTag()
@@ -66,8 +66,7 @@ export default class App extends React.Component {
 	// If the input isn't empty push a new tag to the tags[] array and re-render
 	addTag(tag) {
 		if(tag !== '') {
-			this.state.tags.push({ tag });
-			this.setState({ tags: this.state.tags });
+			this.setState({ tags: this.state.tags.concat(tag) });
 		}
 	}
 
