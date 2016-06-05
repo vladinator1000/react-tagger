@@ -1,9 +1,10 @@
 import React from 'react';
-import TagList from './tags-list';
+import TagList from './TagList';
 
 const tags = [
   { tag: 'sexy' },
-  { tag: 'beautiful' }
+  { tag: 'beautiful' },
+  { tag: 'default tags here' },
 ];
 
 export default class App extends React.Component {

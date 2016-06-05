@@ -1,5 +1,5 @@
 import React, {Component, PropTypes} from 'react';
-import TagListItem from './tags-list-item'
+import TagListItem from './TagListItem'
 
 class TagList extends Component {
   constructor(props) {
